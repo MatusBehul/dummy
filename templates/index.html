@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Greeting</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 70%;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #greeting {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic Greeting</h1>
+    <p>Enter your name below:</p>
+    <form id="greetForm">
+        <input type="text" id="nameInput" placeholder="Your name" required>
+        <button type="submit">Greet Me</button>
+    </form>
+    <div id="greeting"></div>
+
+    <script>
+        document.getElementById('greetForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('nameInput').value;
+            try {
+                const response = await fetch(`/greet?name=${encodeURIComponent(name)}`);
+                const data = await response.json();
+                document.getElementById('greeting').textContent = data.greeting;
+            } catch (error) {
+                document.getElementById('greeting').textContent = 'Error fetching greeting';
+            }
+        });
+    </script>
+</body>
+</html>
