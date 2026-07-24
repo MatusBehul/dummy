@@ -11,4 +11,11 @@ A FastAPI-based Single Page Application (SPA) that provides dynamic greeting fun
 - **Jinja2 Templates**: Server-side rendering support for dynamic content
 - **Error Handling**: Graceful error handling for API requests
 
-## Project Structure
+## Setup/Usage
+
+### Prerequisites
+
+- Python 3.8+
+- pip
+
+### Installation
