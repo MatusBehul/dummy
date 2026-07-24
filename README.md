@@ -13,5 +13,12 @@ A FastAPI-based Single Page Application (SPA) that provides dynamic greeting fun
 
 ## Setup/Usage
 
+### Prerequisites
+
+- Python 3.8+
+- pip
+
+### Installation
+
 1. Install dependencies:
    
